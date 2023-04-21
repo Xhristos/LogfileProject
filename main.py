@@ -50,6 +50,9 @@ while True:
     i = 0
     empty = False
     for main_dirs, sub_dirs, files in os.walk(main_folder):
+        if len(files) == 0:
+            break
+            continue
         for file in files or i < len(temp_files):
             filename = os.path.join(main_folder, main_dirs, file)
             if len(temp_files) == 0:
